@@ -2,7 +2,7 @@
  * @Author: xueml
  * @Date: 2023-07-31 16:41:15
  * @LastEditors: Do not edit
- * @LastEditTime: 2023-08-02 10:43:51
+ * @LastEditTime: 2023-08-02 13:55:30
  * @FilePath: \technical-tool\vue.config.js
  */
 // cnpm install compression-webpack-plugin@6.1.1 -D       gzip压缩插件，需要引入
@@ -22,7 +22,7 @@ const SpeedMeasurePlugin = require('speed-measure-webpack-plugin')
 
 const productionGzipExtensions = /\.(js|css|json|txt|html|ico|svg)(\?.*)?$/i // 开启gzip压缩， 按需写入
 const isProduction = process.env.NODE_ENV === 'production'
-const BASE_URL = process.env.NODE_ENV === 'production' ? './' : './'
+const BASE_URL = process.env.NODE_ENV === 'production' ? './' : '/'
 const path = require('path')
 
 function resolve (dir) {
@@ -41,7 +41,7 @@ module.exports = defineConfig({
     是否在保存的时候使用 `eslint-loader` 进行检查。 有效的值：`ture` | `false` | `“error”` 当设置为 `“error”` 时，检查出的错误会触发编译失败。
     整个项目禁用 ESlint  设置是否在保存文件时通过 eslint- loader 在编译时检查。
   */
-  lintOnSave: process.env.NODE_ENV !== 'production', // 生产环境不进行eslint校验
+  lintOnSave: process.env.NODE_ENV === 'production', // 生产环境不进行eslint校验
   useLocalIp: true, // 将useLoackIp设置为true 就可以了
   https: true, // 开启https 访问
   hotOnly: false, // 热更新
