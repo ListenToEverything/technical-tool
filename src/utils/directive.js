@@ -2,7 +2,7 @@
  * @Author: xueml
  * @Date: 2023-08-02 11:22:58
  * @LastEditors: Do not edit
- * @LastEditTime: 2023-08-02 13:04:23
+ * @LastEditTime: 2023-08-02 16:26:11
  * @FilePath: \technical-tool\src\utils\directive.js
  */
 import Vue from 'vue'
@@ -72,32 +72,32 @@ const preventReClick = Vue.directive('preventReClick', {
 })
 
 // 自定义指令 rap
-// const elWap = Vue.directive('wap', {
-//   bind: function (el, binding, vNode, oldVnode) {
-//     const type = el.tagName
-//     switch (type) {
-//       case 'DIV':
-//         const text = el.innerText.trim()
-//         el.innerHTML = ''
-//         if (text) {
-//           setTimeout(() => appendJumpingLetters(text, el))
-//         }
-//         break
-//       case 'INPUT':
-//         if (el.value) {
-//           const newDivEl = replaceInput(el)
-//           appendJumpingLetters(el.value, newDivEl)
+const elWap = Vue.directive('wap', {
+  bind: function (el, binding, vNode, oldVnode) {
+    const type = el.tagName
+    switch (type) {
+      case 'DIV':
+        const text = el.innerText.trim()
+        el.innerHTML = ''
+        if (text) {
+          setTimeout(() => appendJumpingLetters(text, el))
+        }
+        break
+      case 'INPUT':
+        if (el.value) {
+          const newDivEl = replaceInput(el)
+          appendJumpingLetters(el.value, newDivEl)
 
-//           newDivEl.addEventListener('click', () => {
-//             el.style.display = 'inline-block'
-//             el.focus()
-//             newDivEl.parentNode.removeChild(newDivEl)
-//           })
-//         }
-//         break
-//     }
-//   }
-// })
+          newDivEl.addEventListener('click', () => {
+            el.style.display = 'inline-block'
+            el.focus()
+            newDivEl.parentNode.removeChild(newDivEl)
+          })
+        }
+        break
+    }
+  }
+})
 
 export default {
   preventReClick,

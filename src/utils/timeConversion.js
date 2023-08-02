@@ -2,18 +2,10 @@
  * @Author: xueml
  * @Date: 2023-08-02 11:22:58
  * @LastEditors: Do not edit
- * @LastEditTime: 2023-08-02 14:05:24
+ * @LastEditTime: 2023-08-02 16:26:40
  * @FilePath: \technical-tool\src\utils\timeConversion.js
  */
-/**
- * @author lyq
- * @time 2021年11月21日21:08:48
- *
- * 秒值转时分秒
- * @name TimeToString
- * @example 秒值转时分秒
- * @param {String} seconds 秒
- */
+//  秒值转时分秒
 const TimeToString = (seconds) => {
     const param = parseInt(seconds)
     const hh = ''
