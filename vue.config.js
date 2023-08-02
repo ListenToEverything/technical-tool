@@ -2,7 +2,7 @@
  * @Author: xueml
  * @Date: 2023-07-31 16:41:15
  * @LastEditors: Do not edit
- * @LastEditTime: 2023-08-02 13:55:30
+ * @LastEditTime: 2023-08-02 15:49:10
  * @FilePath: \technical-tool\vue.config.js
  */
 // cnpm install compression-webpack-plugin@6.1.1 -D       gzip压缩插件，需要引入
@@ -59,12 +59,12 @@ module.exports = defineConfig({
 module.exports = {
   devServer: { // 配置开发服务器的选项，如代理、端口等。
     port: PORT, // 端口号
-    host: HOST, // 将localhost进行替换成 0.0.0.0 使用IP访问
+    host: '0.0.0.0', // 将localhost进行替换成 0.0.0.0 使用IP访问
     open: true, // 是否自启动
     // openPage: '/different/page', // 指定deserver 编译完成后自动打开的页面.需要配合 open：true 来使用。如果Vue router 为 hash mode。应在url前面补上/#。如：openPage: '/#/about'
-    headers: { // 在所有响应中添加首部内容
-      'X-Custom-Foo': 'bar'
-    },
+    // headers: { // 在所有响应中添加首部内容
+    //   'X-Custom-Foo': 'bar'
+    // },
 
     /*
      如果你的前端应用和后端 API 服务器没有运行在同一个主机上，你需要在开发环境下将 API 请求代理到 API 服务器。这个问题可以通过vue.config.js中的devServer.proxy选项来配置。
