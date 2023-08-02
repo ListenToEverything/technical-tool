@@ -3,7 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "serve": "vue-cli-service serve",
+    "serve": "vue-cli-service serve --mode uat",
+    "serve:sit": "vue-cli-service serve --mode sit",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint"
   },
@@ -22,13 +23,22 @@
     "@vue/cli-plugin-vuex": "~5.0.0",
     "@vue/cli-service": "~5.0.0",
     "@vue/eslint-config-standard": "^6.1.0",
+    "compression-webpack-plugin": "^6.1.1",
     "eslint": "^7.32.0",
     "eslint-plugin-import": "^2.25.3",
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-promise": "^5.1.0",
     "eslint-plugin-vue": "^8.0.3",
+    "image-webpack-loader": "^8.1.0",
     "less": "^4.0.0",
     "less-loader": "^8.0.0",
-    "vue-template-compiler": "^2.6.14"
+    "postcss": "^8.4.27",
+    "postcss-pxtorem": "^6.0.0",
+    "speed-measure-webpack-plugin": "^1.5.0",
+    "vue-template-compiler": "^2.6.14",
+    "webpack": "^5.88.2",
+    "webpack-bundle-analyzer": "^4.7.0",
+    "webpack-cli": "^5.1.4",
+    "hard-source-webpack-plugin": "^0.13.1"
   }
 }
