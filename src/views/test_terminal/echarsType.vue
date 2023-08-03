@@ -2,11 +2,11 @@
  * @Author: xueml
  * @Date: 2023-05-28 09:55:37
  * @LastEditors: Do not edit
- * @LastEditTime: 2023-08-03 15:35:13
- * @FilePath: \technical-tool\src\views\test_terminal\dataView.vue
+ * @LastEditTime: 2023-08-03 17:07:36
+ * @FilePath: \technical-tool\src\views\test_terminal\echarsType.vue
 -->
 <template>
-  <div class="dataView">
+  <div class="echars">
     <!-- <div>
       <div @click="screen">部分全屏</div>
       <div @click="fullScreen">沉浸式全屏</div>
@@ -29,25 +29,31 @@
       <div>
         <echarsType5></echarsType5>
       </div>
+      <div>
+        <echarsType6></echarsType6>
+      </div>
     </div>
   </div>
 </template>
 
 <script>
-import echarsType1 from '@/view/test_terminal/case/dataView/echarsType1.vue'
-import echarsType2 from '@/view/test_terminal/case/dataView/echarsType2.vue'
-import echarsType3 from '@/view/test_terminal/case/dataView/echarsType3.vue'
-import echarsType4 from '@/view/test_terminal/case/dataView/echarsType4.vue'
-import echarsType5 from '@/view/test_terminal/case/dataView/echarsType5.vue'
+import echarsType1 from '@/views/test_terminal/case/echars/echarsType1.vue'
+import echarsType2 from '@/views/test_terminal/case/echars/echarsType2.vue'
+import echarsType3 from '@/views/test_terminal/case/echars/echarsType3.vue'
+import echarsType4 from '@/views/test_terminal/case/echars/echarsType4.vue'
+import echarsType5 from '@/views/test_terminal/case/echars/echarsType5.vue'
+import echarsType6 from '@/views/test_terminal/case/echars/echarsType6.vue'
+
 
 export default {
-  name: 'DataView',
+  name: 'echarsType',
   components: {
     echarsType1,
     echarsType2,
     echarsType3,
     echarsType4,
-    echarsType5
+    echarsType5,
+    echarsType6
   },
   data () {
     return {
@@ -80,7 +86,7 @@ export default {
 </script>
 
 <style scoped lang="less">
-.dataView {
+.echars {
   background-color: black;
   height: 100vh;
   width: 100vw;

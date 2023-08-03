@@ -2,45 +2,39 @@
  * @Author: xueml
  * @Date: 2023-07-31 16:41:15
  * @LastEditors: Do not edit
- * @LastEditTime: 2023-08-03 16:14:41
+ * @LastEditTime: 2023-08-03 16:36:49
  * @FilePath: \technical-tool\src\router\index.js
  */
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 
-// import Mobile_terminal from './Mobile_terminal/index'//移动端页面
-// import display_System from './PC_terminal/display_System/index'//展示系统
-// import management_System from './PC_terminal/management_System/index'//管理系统
-// import test from './test'//测试页面
+import Mobile_terminal from './Mobile_terminal/index'//移动端页面
+import display_System from './PC_terminal/display_System/index'//展示系统
+import management_System from './PC_terminal/management_System/index'//管理系统
+import test from './test'//测试页面
 
 
 Vue.use(VueRouter)
 
 const routes = [
-  {
-    path: '/',
-    name: 'home',
-    component: HomeView
-  },
-  {
-    path: '/about',
-    name: 'about',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/AboutView.vue')
-  },
-  {
-    path: '/HomeTest',
-    name: 'HomeTest',
-    component: () => import(/* webpackChunkName: "about" */ '../views/HomeTest.vue')
-  },
-
-  // ...Mobile_terminal,
-  // ...display_System,
-  // ...management_System,
-  // ...test,
+  // {
+  //   path: '/',
+  //   name: 'home',
+  //   component: HomeView
+  // },
+  // {
+  //   path: '/about',
+  //   name: 'about',
+  //   // route level code-splitting
+  //   // this generates a separate chunk (about.[hash].js) for this route
+  //   // which is lazy-loaded when the route is visited.
+  //   component: () => import(/* webpackChunkName: "about" */ '../views/AboutView.vue')
+  // },
+  ...Mobile_terminal,
+  ...display_System,
+  ...management_System,
+  ...test,
 ]
 
 const router = new VueRouter({
@@ -82,12 +76,15 @@ router.beforeEach((to, from, next) => {
   // next()
   get_userinfo(to, from, "token")
   if (to.path === "/") {
-
-
-    next({
-      path: "/HomeTest",
-    })
-
+    if (utils.equipment.isMobile()) {
+      next({
+        path: "/test",
+      })
+    } else {
+      next({
+        path: "/test",
+      })
+    }
   }
   next()
 

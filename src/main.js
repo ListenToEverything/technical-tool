@@ -2,7 +2,7 @@
  * @Author: xueml
  * @Date: 2023-07-31 16:41:15
  * @LastEditors: Do not edit
- * @LastEditTime: 2023-08-02 14:00:49
+ * @LastEditTime: 2023-08-03 17:03:23
  * @FilePath: \technical-tool\src\main.js
  */
 import Vue from 'vue'
@@ -39,14 +39,17 @@ import utils from './utils'
 // 引入 echarts 核心模块，核心模块提供了 echarts 使用必须要的接口。
 import * as echarts from 'echarts/core'
 // 引入柱状图图表，图表后缀都为 Chart
-import { BarChart } from 'echarts/charts'
+import { BarChart, RadarChart, GaugeChart, ScatterChart, PictorialBarChart } from 'echarts/charts'
 // 引入提示框，标题，直角坐标系，数据集，内置数据转换器组件，组件后缀都为 Component
 import {
   TitleComponent,
   TooltipComponent,
   GridComponent,
   DatasetComponent,
-  TransformComponent
+  TransformComponent,
+  TimelineComponent,
+  LegendComponent,
+  PolarComponent
 } from 'echarts/components'
 // 标签自动布局、全局过渡动画等特性
 import { LabelLayout, UniversalTransition } from 'echarts/features'
@@ -62,13 +65,22 @@ echarts.use([
   BarChart,
   LabelLayout,
   UniversalTransition,
-  CanvasRenderer
+  CanvasRenderer,
+  RadarChart,
+  GaugeChart,
+  TimelineComponent,
+  ScatterChart,
+  LegendComponent,
+  PolarComponent,
+  PictorialBarChart
 ])
 /// //////////////////////////////////////////////////////////////////////////////////
 
 Vue.directive('ripple', Ripple)
 Ripple.color = 'rgba(0, 0, 0, 0.2)'
 window.utils = utils
+// 使用echarts
+Vue.prototype.$echarts = echarts
 Vue.prototype.$ajax = server
 Vue.prototype.$sensors = sensors
 

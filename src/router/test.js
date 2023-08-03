@@ -1,13 +1,10 @@
 // import MIndex from "@/viewss/m_previews/index.vue"
 const routes = [
-    // import HomeView from '../views/HomeView.vue'
-
-    // {
-    //     path: '/HomeTest',
-    //     name: 'HomeTest',
-    //     title: 'rap',
-    //     component: () => import('@/views/test/HomeTest.vue')
-    // },
+    {
+        path: '/test',
+        name: 'HomeTest',
+        component: () => import('@/views/test_terminal/HomeTest.vue')
+    },
     // {
     //     path: '/rap',
     //     name: 'rap',
@@ -38,12 +35,12 @@ const routes = [
     //     title: '文件上传',
     //     component: () => import('@/views/test/uploadFile.vue')
     // },
-    // {
-    //     path: '/dataview',
-    //     name: 'dataview',
-    //     title: '大屏',
-    //     component: () => import('@/views/test/dataview.vue')
-    // },
+    {
+        path: '/echarsType',
+        name: 'echarsType',
+        title: '大屏',
+        component: () => import('@/views/test_terminal/echarsType.vue')
+    },
     // {
     //     path: '/echars',
     //     name: 'echars',

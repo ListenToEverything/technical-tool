@@ -18,12 +18,11 @@ export default {
 
   },
   mounted () {
-    this.getEchartData1()
+    this.init()
   },
 
   methods: {
-
-    getEchartData1 () {
+    init () {
       this.$nextTick(() => {
         const chart = this.$refs.chart
         if (chart) {
@@ -248,7 +247,6 @@ export default {
         }
       })
     },
-    // Make dynamic data.
     random () {
       return +(Math.random() * (this.maxData - 10)).toFixed(1)
     },
