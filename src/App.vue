@@ -1,10 +1,17 @@
+<!--
+ * @Author: xueml
+ * @Date: 2023-08-03 15:48:37
+ * @LastEditors: Do not edit
+ * @LastEditTime: 2023-08-03 15:53:32
+ * @FilePath: \technical-tool\src\App.vue
+-->
 <template>
   <div id="app">
-    <nav>
+    <!-- <nav>
       <router-link to="/">Home</router-link> |
       <router-link to="/about">About</router-link>
-    </nav>
-    <router-view/>
+    </nav> -->
+    <router-view />
   </div>
 </template>
 

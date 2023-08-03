@@ -2,7 +2,7 @@
  * @Author: xueml
  * @Date: 2023-07-31 16:41:24
  * @LastEditors: Do not edit
- * @LastEditTime: 2023-08-02 14:04:12
+ * @LastEditTime: 2023-08-03 10:15:35
  * @FilePath: \technical-tool\README.md
 -->
 # 技术实验基地
@@ -120,6 +120,14 @@ npm install docxtemplater-image-module-free --save
 npm install angular-expressions --save
 ```
 ### vue-ripple-directive点击水波纹
+```
 npm install vue-ripple-directive --save
+```
 ###  echarts 图表
+```
 npm install echarts
+```
+## md5加密
+```
+npm i spark-md5
+```

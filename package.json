@@ -24,6 +24,7 @@
     "jszip-utils": "^0.1.0",
     "pizzip": "^3.1.4",
     "sa-sdk-javascript": "^1.25.11",
+    "spark-md5": "^3.0.2",
     "vant": "latest-v2",
     "vconsole": "^3.15.1",
     "vue": "^2.6.14",

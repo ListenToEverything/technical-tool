@@ -2,7 +2,7 @@
  * @Author: xueml
  * @Date: 2023-07-31 16:41:15
  * @LastEditors: Do not edit
- * @LastEditTime: 2023-08-02 15:49:10
+ * @LastEditTime: 2023-08-03 15:29:52
  * @FilePath: \technical-tool\vue.config.js
  */
 // cnpm install compression-webpack-plugin@6.1.1 -D       gzip压缩插件，需要引入

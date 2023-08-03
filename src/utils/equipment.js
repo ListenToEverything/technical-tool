@@ -2,7 +2,7 @@
  * @Author: xueml
  * @Date: 2023-08-02 11:22:58
  * @LastEditors: Do not edit
- * @LastEditTime: 2023-08-02 16:22:42
+ * @LastEditTime: 2023-08-02 17:26:13
  * @FilePath: \technical-tool\src\utils\equipment.js
  */
 // eslint-disable-next-line
@@ -46,7 +46,6 @@ const equipment = {
             }
         }
         xhr.send()
-        return ip
     }
 }
 

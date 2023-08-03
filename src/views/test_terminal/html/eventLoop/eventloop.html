@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+
+  <div>
+    <input type="text" onblur="inputBlur(event.target.value)">
+    <p>计数：<span id="num"></span></p>
+  </div>
+  <div>
+    <img src="../../../assets/20.3.jpg" alt="">
+    <p>点击Start Worker按钮启动web worker，可以看到web worker开始工作，且在web worker正常工作时，我们仍然可以在input输入框中输入信息，这表示页面并没有因为web
+      worker的运行而被阻塞：</p>
+  </div>
+
+</body>
+<script>
+  console.log('未引入文件', '这是主任务', 1)
+</script>
+<script src="./js/eventloop1.js">
+</script>
+<script>
+  console.log('未引入文件', '单线程************************************')
+  let num = document.getElementById('num')
+  let n = 0
+  setInterval(() => {
+    console.log('这是定时宏任务', n)
+    num.innerHTML = n
+    n++
+  }, 1000)
+
+  function inputBlur (val) {
+    //setTimeout(() => {
+    console.log('这是定时宏任务', val)
+    //}, 1000)
+  }
+
+
+</script>
+<script>
+  console.log('未引入文件', '多线程************************************')
+  console.log('浏览器是否支持work', typeof (Worker))
+  let w = new Worker('./js/worker.js')
+  w.onmessage = function (event) {
+    console.log('多线程', event)
+  }
+</script>
+
+
+</html>

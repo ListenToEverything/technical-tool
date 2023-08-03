@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+ 
+<head>
+    <title>js生成execl文档</title>
+ 
+</head>
+ 
+<body>
+    <script type="text/javascript">
+        function JSONToExcelConvertor(fileName, jsonData) {
+            var json = jsonData;
+            var excel = '<table>';
+            for (let i = 0; i < json.length; i++) {
+                const item = json[i];
+                // 每次循环把每对儿键值的内容放在同一行上
+                excel += "<tr>";
+                for (let j = 0; j < item.length; j++) {
+                    const ele = item[j];
+                    excel += "<td>" + ele + "</td>";
+                }
+                excel += "</tr>";   // 一行结束
+            }
+            //table结束
+            excel += "</table>";
+ 
+            var excelFile = "<html xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:x='urn:schemas-microsoft-com:office:excel' xmlns='http://www.w3.org/TR/REC-html40'>";
+            excelFile += '<meta http-equiv="content-type" content="application/vnd.ms-excel; charset=UTF-8">';
+            excelFile += '<meta http-equiv="content-type" content="application/vnd.ms-excel';
+            excelFile += '; charset=UTF-8">';
+            excelFile += "<head>";
+            excelFile += "<!--[if gte mso 9]>";
+            excelFile += "<xml>";
+            excelFile += "<x:ExcelWorkbook>";
+            excelFile += "<x:ExcelWorksheets>";
+            excelFile += "<x:ExcelWorksheet>";
+            excelFile += "<x:Name>";
+            excelFile += "{worksheet}";
+            excelFile += "</x:Name>";
+            excelFile += "<x:WorksheetOptions>";
+            excelFile += "<x:DisplayGridlines/>";
+            excelFile += "</x:WorksheetOptions>";
+            excelFile += "</x:ExcelWorksheet>";
+            excelFile += "</x:ExcelWorksheets>";
+            excelFile += "</x:ExcelWorkbook>";
+            excelFile += "</xml>";
+            excelFile += "<![endif]-->";
+            excelFile += "</head>";
+            excelFile += "<body>";
+            excelFile += excel; //将table 拼接
+            excelFile += "</body>";
+            excelFile += "</html>";
+ 
+            var uri = 'data:application/vnd.ms-excel;charset=utf-8,' + encodeURIComponent(excelFile);
+            // 给我们上面格式出来的内容设置一个URI(统一资源标志符)
+            var link = document.createElement("a");     //创建a标签
+            link.href = uri;        // 把上文解析出来的链接赋值给上面创建的a标签
+            link.style = "visibility:hidden";        //设置为不可见，当然设置也可以，看个人喜好
+            link.download = fileName + ".xls";//指定文件名和文件后缀格式
+            // 不可以改为 xlsx格式，因为我们这个格式化是按照格式写出来的，而真正的excel文件格式很麻烦
+            // 如果打不开，查看这个文件属性是否被锁定了，解除锁定即可。
+            console.log(document.body);
+            document.body.appendChild(link);        //追加a标签到html内部
+            // 当然不放也能点击，但是为了保险起见，还是放一下
+            link.click();   // 点击我们刚刚创建的a标签
+            document.body.removeChild(link);    // 把刚刚创建的a标签删除了
+        }
+        function test() {
+            var json = [
+                ['序号', '名称', '年龄', '性别'],
+                ['1', '小明', '16', '男'],
+                ['1', '小红', '18', '女'],
+                ['1', 'selectDele', '28', '男'],
+                ['1', '康康', '15', '男']
+            ];
+            // 如果大家的是字符串，就把下面两行解除注释，然后取控制台对比数据格式是否一致
+            // json = JSON.parse(json);
+            // console.log(json)
+            JSONToExcelConvertor("json1", json);
+        }
+        test();
+    </script>
+</body>
+ 
+</html>

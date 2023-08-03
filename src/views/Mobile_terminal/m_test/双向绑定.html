@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head style="display:block">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+<style style="display:block;
+white-space: pre;
+background:orange;
+color:purple" contenteditable>
+    .boy{
+        background-color: rgb(93, 151, 57);
+    }
+    body{
+        background-color: aquamarine;
+    }
+
+</style>
+<body>
+    <div class="boy">
+        <h1>双向数据绑定</h1>
+        <span id="spanText">{{text}}</span><br>
+        <input type="text" id="inputText"/>
+    </div>
+
+</body>
+<script>
+    // //双向数据绑定
+    var obj = {text:"123"};
+    // // 监测输入框数据，并获取数据
+    // document.getElementById('inputText').onkeyup = function(e){
+    //     obj.text = e.target.value;
+    // };
+    // // 将获取到的数据绑定到标签中
+    // Object.defineProperty(obj,'text',{
+    //     set:function(val){
+    //         //将数据绑定标签中
+    //         document.getElementById('spanText').innerHTML = val;
+    //         // 这一步是为了保证数据
+    //         document.getElementById('inputText').value = val;
+    //     }
+    // });
+    // obj.text = "";
+
+    //document.querySelector 获取第一个该元素
+    var input=document.querySelector('input')
+    var span=document.querySelector('span')
+    
+    span.innerHTML=obj.text
+    input.value=obj.text
+
+    //实现视图变化，数据也跟着变化
+    input.oninput=(()=>{
+        obj.text=input.value
+    })
+
+    Object.defineProperty(obj,"text",{
+        get(){
+            return obj.text
+        },
+        set(value){
+            span.innerHTML=value
+            input.value=value
+        }
+    })
+
+
+</script>
+</html>

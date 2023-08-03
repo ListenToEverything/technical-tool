@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ul{
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+ 
+        .menu>div{
+            width: 80px;
+            text-align: center;
+            height: 40px;
+            line-height: 40px;
+            font-size: 18px;
+            float: left;
+            position: relative;
+        }
+        .menu ul{
+            position: absolute;
+            left: 0;
+            top: 40px;
+            z-index: 2;
+            border: 1px solid #CCC;
+            background-color: #FFF;
+            border-radius: 5px;
+            display: none;
+        }
+        .menu ul>li{
+            width: 80px;
+            text-align: center;
+            font-size: 16px;
+            height: 32px;
+            line-height: 32px;
+        }
+        .menu>div:hover>ul{
+            display: block;
+        }
+ 
+        .menu ul>li:hover{
+            background-color: #CCC;
+            cursor: pointer;
+        }
+ 
+        .menu::after{
+            content: "";
+            height: 0;
+            display: block;
+            clear: both;
+        }
+        p:first-child{
+            color: rebeccapurple;
+        }
+        
+        
+         /* //使用only逻辑操作符，只有在小于等于300px时生效 */
+        @media only screen and(max-width:300px) {
+            body { 
+                background-color: antiquewhite;
+            }
+        }
+
+		 /* //使用not逻辑操作符，只有在大于300px时生效 */
+        @media only screen and(max-width:300px) {
+            body { 
+                background-color: red;
+            }
+        }
+         
+        
+        /* //使用and逻辑操作符。横屏和最小宽度为700px时生效。 */
+        @media (min-width: 700px) and (orientation: landscape) {
+            body {
+                background-color: blue;
+            }
+        }
+
+
+    </style>
+</head>
+<body>
+    <div class="menu">
+        <div>
+            <span>设置</span>
+            <ul>
+                <p>查询设置</p>
+                <li>搜索设置</li>
+                <li>高级设置</li>
+                <li>隐私设置</li>
+            </ul>
+        </div>
+        <div>登录</div>
+    </div>
+</body>
+</html>
