@@ -2,7 +2,7 @@
  * @Author: xueml
  * @Date: 2023-08-02 17:11:23
  * @LastEditors: Do not edit
- * @LastEditTime: 2023-08-03 15:35:53
+ * @LastEditTime: 2023-08-03 17:15:59
  * @FilePath: \technical-tool\src\views\test_terminal\imgZIP.vue
 -->
 <template>
@@ -19,8 +19,8 @@
 </template>
 
 <script>
-import zip1 from '@/view/test_terminal/case/file/imgZip/imgZIP1.vue'
-import zip2 from '@/view/test_terminal/case/file/imgZip/imgZIP2.vue'
+import zip1 from '@/views/test_terminal/case/file/Case_CompressImg/imgZIP1.vue'
+import zip2 from '@/views/test_terminal/case/file/Case_CompressImg/imgZIP2.vue'
 export default {
   name: 'imgZIP',
   components: {

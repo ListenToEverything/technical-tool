@@ -2,11 +2,20 @@
  * @Author: xueml
  * @Date: 2023-07-31 16:41:15
  * @LastEditors: Do not edit
- * @LastEditTime: 2023-08-03 16:38:19
- * @FilePath: \technical-tool\src\views\HomeTest.vue
+ * @LastEditTime: 2023-08-03 17:32:06
+ * @FilePath: \technical-tool\src\views\test_terminal\HomeTest.vue
 -->
 <template>
   <div class="hello">
+    <h1 @click="goEchars">echars</h1>
+    <h1 @click="goCompressImg">图片压缩</h1>
+    <h1 @click="goEchars">echars</h1>
+    <h1 @click="goEchars">echars</h1>
+    <h1 @click="goEchars">echars</h1>
+    <h1 @click="goEchars">echars</h1>
+    <h1 @click="goEchars">echars</h1>
+    <h1 @click="goEchars">echars</h1>
+    <h1 @click="goEchars">echars</h1>
     <h1 @click="goEchars">echars</h1>
   </div>
 </template>
@@ -20,7 +29,14 @@ export default {
   methods: {
     goEchars () {
       this.$router.push({
-        path: '/echarsType '
+        path: '/test/echarsType',
+        // query:{redirect:to.path}
+      })
+    },
+    goCompressImg () {
+      this.$router.replace({
+        path: '/test/imgZIP',
+        // query:{redirect:to.path}
       })
     }
   }
@@ -29,18 +45,7 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="less">
-h3 {
-  margin: 40px 0 0;
-}
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-a {
+h1 {
   color: #42b983;
 }
 </style>

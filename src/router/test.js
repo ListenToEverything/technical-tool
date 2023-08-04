@@ -1,9 +1,20 @@
-// import MIndex from "@/viewss/m_previews/index.vue"
 const routes = [
     {
         path: '/test',
         name: 'HomeTest',
         component: () => import('@/views/test_terminal/HomeTest.vue')
+    },
+    {
+        path: '/test/echarsType',
+        name: 'echarsType',
+        title: 'echars',
+        component: () => import('@/views/test_terminal/echarsType.vue')
+    },
+    {
+        path: '/test/imgZIP',
+        name: 'imgZIP',
+        title: '图片压缩',
+        component: () => import('@/views/test_terminal/imgZIP.vue')
     },
     // {
     //     path: '/rap',
@@ -23,30 +34,14 @@ const routes = [
     //     title: '跑马灯',
     //     component: () => import('@/views/test/runningAway.vue')
     // },
-    // {
-    //     path: '/imgZIP',
-    //     name: 'imgZIP',
-    //     title: '图片压缩',
-    //     component: () => import('@/views/test/imgZIP.vue')
-    // },
+
     // {
     //     path: '/uploadFile',
     //     name: 'uploadFile',
     //     title: '文件上传',
     //     component: () => import('@/views/test/uploadFile.vue')
     // },
-    {
-        path: '/echarsType',
-        name: 'echarsType',
-        title: '大屏',
-        component: () => import('@/views/test_terminal/echarsType.vue')
-    },
-    // {
-    //     path: '/echars',
-    //     name: 'echars',
-    //     title: 'echars',
-    //     component: () => import('@/views/test/echarsTest.vue')
-    // },
+
     // {
     //     path: '/phone',
     //     name: 'phone',
